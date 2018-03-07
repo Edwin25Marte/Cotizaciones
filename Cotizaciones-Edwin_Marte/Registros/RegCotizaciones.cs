@@ -27,7 +27,7 @@ namespace Cotizaciones_Edwin_Marte
 
         }
 
-        private void Limpiar()
+       /* private void Limpiar()
         {
             CotizacionesIdNumericUpDown.Value = 0;
             FechaDateTimePicker1.Value = DateTime.Now;
@@ -120,16 +120,16 @@ namespace Cotizaciones_Edwin_Marte
                 MessageBox.Show("La cotizacion no existe.");
         }
 
-        private void RegistroArticuloButton_Click(object sender, EventArgs e)
-        {
-            RegArticulos Ra = new RegArticulos();
-            Ra.Show();
-        }
-
         private void ConsultarCButton_Click(object sender, EventArgs e)
         {
             cCotizaciones cc = new cCotizaciones();
             cc.Show();
         }
+
+        private void CotizacionesDetalleButton_Click(object sender, EventArgs e)
+        {
+            CotizacionesDetalle CD = new CotizacionesDetalle();
+            CD.Show();
+        }*/
     }
 }

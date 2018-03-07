@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cotizaciones_Edwin_Marte.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,21 +14,24 @@ namespace Cotizaciones_Edwin_Marte.Entidades
         public int CotizacionesId { get; set; }
         public string Fecha { get; set; }
         public string Comentario { get; set; }
-        public decimal Monto { get; set; }
+        public decimal Total { get; set; }
+        public virtual List<CotizacionDetalle> CotDetalle { get; set; }
 
         public Cotizaciones()
         {
             CotizacionesId = 0;
             Fecha = " ";
             Comentario = " ";
-            Monto = 0;
+            Total = 0;
+            CotDetalle = new List<CotizacionDetalle>();
         }
-        public Cotizaciones(int CotizacionesId, string Fecha, string Comentario, decimal Monto)
+        public Cotizaciones(int CotizacionesId, string Fecha, string Comentario, decimal Total, List<CotizacionDetalle> CotDetalle)
         {
             this.CotizacionesId = CotizacionesId;
             this.Fecha = Fecha;
             this.Comentario = Comentario;
-            this.Monto = Monto;
+            this.Total = Total;
+            this.CotDetalle = CotDetalle;
         }
     }
 }

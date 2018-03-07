@@ -13,9 +13,10 @@ namespace Cotizaciones_Edwin_Marte.Registros
 {
     public partial class CotizacionesDetalle : Form
     {
-        Articulos Articulo = new Articulos();
-        private int i = 0;
-
+        Articulos BArt = new Articulos();
+        private Cotizaciones Co = new Cotizaciones();
+        private List<CotizacionDetalle> cotd = new List<CotizacionDetalle>();
+        private decimal Total = 0;
         public CotizacionesDetalle()
         {
             InitializeComponent();
@@ -26,37 +27,27 @@ namespace Cotizaciones_Edwin_Marte.Registros
 
         }
 
-        private CotizacionDetalle ObtInstancia()
+        private Cotizaciones LlenarClase(List<CotizacionDetalle> Det)
         {
-            Articulo = ArticulosBLL.Buscar((int)BArtNumericUpDown.Value);
-            int ArtId = 0;
-
-            if (Articulo != null)
-                ArtId = Articulo.ArticulosId;
-
-            decimal Imp = (decimal)CantidadNumericUpDown.Value * (decimal)PrecioNumericUpDown.Value;
-
-            return new CotizacionDetalle(
+            return new Cotizaciones(
                 0,
-                ArtId,
-                FechaDetalleDateTimePicker.Value.ToString(),
-                (decimal)CantidadNumericUpDown.Value,
-                (decimal)PrecioNumericUpDown.Value,
-                Imp
+                FechaDetalleDateTimePicker.ToString(),
+                ComentarioTextBox.Text,
+                Total,
+                Det
                 );
         }
 
         private void BuscarArtButton_Click(object sender, EventArgs e)
         {
             int Id;
-            Articulos BArt = new Articulos();
 
             int.TryParse(BArtNumericUpDown.Text, out Id);
 
             BArt = ArticulosBLL.Buscar(Id);
 
             if (BArt != null)
-                ArtNTextBox.Text = BArt.Nombre;
+                PrecioNumericUpDown.Value = BArt.Precio;
             else
                 MessageBox.Show("El articulo no  existe.");
         }
@@ -75,19 +66,30 @@ namespace Cotizaciones_Edwin_Marte.Registros
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            int.TryParse(BArtNumericUpDown.Text, out id);
-            Articulos Art = new Articulos();
-
-            DetalleDataGridView.Rows[i].Cells[0].Value = Art.ArticulosId;
-            DetalleDataGridView.Rows[i].Cells[1].Value = Art.Descripcion;
-            DetalleDataGridView.Rows[i].Cells[2].Value = CantidadNumericUpDown.Value;
-            DetalleDataGridView.Rows[i].Cells[3].Value = PrecioNumericUpDown.Value;
-            DetalleDataGridView.Rows[i].Cells[4].Value = CantidadNumericUpDown.Value * PrecioNumericUpDown.Value;
-            DetalleDataGridView.Rows.Add();
-       
-            i++;
+            cotd.Add(new CotizacionDetalle(
+                 BArt.ArticulosId,
+                 BArt.Descripcion,
+                 (int)CantidadNumericUpDown.Value,
+                 BArt.Precio,
+                 decimal.Parse(ImporteTextBox.Text)
+                 ));
+            Total += decimal.Parse(ImporteTextBox.Text);
+            DetalleDataGridView.DataSource = cotd.ToList();
         }
 
+        private void BuscarCotizacionButton_Click(object sender, EventArgs e)
+        {
+            Co = CotizacionesBLL.Buscar((int)CotIdNumericUpDown.Value);
+
+            if (Co == null)
+                MessageBox.Show("La cotizacion no existe.");
+            else
+                MessageBox.Show("Se encontro la cotizacion.");
+        }
+
+        private void ConsultarCButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

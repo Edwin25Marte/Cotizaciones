@@ -23,7 +23,7 @@ namespace Cotizaciones_Edwin_Marte.BLL
                 dbase.SaveChanges();
                 paso = true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -47,7 +47,7 @@ namespace Cotizaciones_Edwin_Marte.BLL
             return cotizacion;
         }
 
-        public static bool Modificar(Cotizaciones est)
+        public static bool Modificar(Cotizaciones Co)
         {
             bool paso = false;
 
@@ -55,7 +55,7 @@ namespace Cotizaciones_Edwin_Marte.BLL
             {
                 ContextoCot dbase = new ContextoCot();
 
-                dbase.Entry(est).State = EntityState.Modified;
+                dbase.Entry(Co).State = EntityState.Modified;
                 dbase.SaveChanges();
                 paso = true;
 

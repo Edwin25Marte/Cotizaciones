@@ -38,10 +38,9 @@
             this.MontoCNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.GuardarCButton = new System.Windows.Forms.Button();
             this.EliminarCButton = new System.Windows.Forms.Button();
-            this.RegistroArticuloButton = new System.Windows.Forms.Button();
-            this.ConsultarCButton = new System.Windows.Forms.Button();
             this.CotizacionesIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.BuscarCButton = new System.Windows.Forms.Button();
+            this.CotizacionesDetalleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MontoCNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CotizacionesIdNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +62,7 @@
             this.NuevoCButton.TabIndex = 1;
             this.NuevoCButton.Text = "Nuevo";
             this.NuevoCButton.UseVisualStyleBackColor = true;
-            this.NuevoCButton.Click += new System.EventHandler(this.NuevoCButton_Click);
+            //this.NuevoCButton.Click += new System.EventHandler(this.NuevoCButton_Click);
             // 
             // label2
             // 
@@ -122,7 +121,7 @@
             this.GuardarCButton.TabIndex = 10;
             this.GuardarCButton.Text = "Guardar";
             this.GuardarCButton.UseVisualStyleBackColor = true;
-            this.GuardarCButton.Click += new System.EventHandler(this.GuardarCButton_Click);
+            //this.GuardarCButton.Click += new System.EventHandler(this.GuardarCButton_Click);
             // 
             // EliminarCButton
             // 
@@ -132,27 +131,7 @@
             this.EliminarCButton.TabIndex = 11;
             this.EliminarCButton.Text = "Eliminar";
             this.EliminarCButton.UseVisualStyleBackColor = true;
-            this.EliminarCButton.Click += new System.EventHandler(this.EliminarCButton_Click);
-            // 
-            // RegistroArticuloButton
-            // 
-            this.RegistroArticuloButton.Location = new System.Drawing.Point(34, 13);
-            this.RegistroArticuloButton.Name = "RegistroArticuloButton";
-            this.RegistroArticuloButton.Size = new System.Drawing.Size(119, 23);
-            this.RegistroArticuloButton.TabIndex = 12;
-            this.RegistroArticuloButton.Text = "Registro de articulos";
-            this.RegistroArticuloButton.UseVisualStyleBackColor = true;
-            this.RegistroArticuloButton.Click += new System.EventHandler(this.RegistroArticuloButton_Click);
-            // 
-            // ConsultarCButton
-            // 
-            this.ConsultarCButton.Location = new System.Drawing.Point(241, 13);
-            this.ConsultarCButton.Name = "ConsultarCButton";
-            this.ConsultarCButton.Size = new System.Drawing.Size(75, 23);
-            this.ConsultarCButton.TabIndex = 13;
-            this.ConsultarCButton.Text = "Consultar";
-            this.ConsultarCButton.UseVisualStyleBackColor = true;
-            this.ConsultarCButton.Click += new System.EventHandler(this.ConsultarCButton_Click);
+            //this.EliminarCButton.Click += new System.EventHandler(this.EliminarCButton_Click);
             // 
             // CotizacionesIdNumericUpDown
             // 
@@ -169,17 +148,26 @@
             this.BuscarCButton.TabIndex = 15;
             this.BuscarCButton.Text = "Buscar";
             this.BuscarCButton.UseVisualStyleBackColor = true;
-            this.BuscarCButton.Click += new System.EventHandler(this.BuscarCButton_Click);
+           // this.BuscarCButton.Click += new System.EventHandler(this.BuscarCButton_Click);
+            // 
+            // CotizacionesDetalleButton
+            // 
+            this.CotizacionesDetalleButton.Location = new System.Drawing.Point(35, 13);
+            this.CotizacionesDetalleButton.Name = "CotizacionesDetalleButton";
+            this.CotizacionesDetalleButton.Size = new System.Drawing.Size(123, 23);
+            this.CotizacionesDetalleButton.TabIndex = 16;
+            this.CotizacionesDetalleButton.Text = "Cotizaciones detalle";
+            this.CotizacionesDetalleButton.UseVisualStyleBackColor = true;
+            //this.CotizacionesDetalleButton.Click += new System.EventHandler(this.CotizacionesDetalleButton_Click);
             // 
             // RegCotizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 289);
+            this.Controls.Add(this.CotizacionesDetalleButton);
             this.Controls.Add(this.BuscarCButton);
             this.Controls.Add(this.CotizacionesIdNumericUpDown);
-            this.Controls.Add(this.ConsultarCButton);
-            this.Controls.Add(this.RegistroArticuloButton);
             this.Controls.Add(this.EliminarCButton);
             this.Controls.Add(this.GuardarCButton);
             this.Controls.Add(this.MontoCNumericUpDown);
@@ -212,10 +200,9 @@
         private System.Windows.Forms.NumericUpDown MontoCNumericUpDown;
         private System.Windows.Forms.Button GuardarCButton;
         private System.Windows.Forms.Button EliminarCButton;
-        private System.Windows.Forms.Button RegistroArticuloButton;
-        private System.Windows.Forms.Button ConsultarCButton;
         private System.Windows.Forms.NumericUpDown CotizacionesIdNumericUpDown;
         private System.Windows.Forms.Button BuscarCButton;
+        private System.Windows.Forms.Button CotizacionesDetalleButton;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cotizaciones_Edwin_Marte.Registros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace Cotizaciones_Edwin_Marte
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegCotizaciones());
+            Application.Run(new RegArticulos());
         }
     }
 }

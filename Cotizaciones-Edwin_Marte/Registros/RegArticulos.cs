@@ -29,7 +29,6 @@ namespace Cotizaciones_Edwin_Marte.Registros
         private void Limpiar()
         {
             ArticulosIdNumericUpDown.Value = 0;
-            NombreArtTextBox.Clear();
             DescripcionTextBox.Clear();
             PrecioNumericUpDown.Value = 0;
         }
@@ -38,7 +37,6 @@ namespace Cotizaciones_Edwin_Marte.Registros
         {
             return new Articulos(
                 1,
-                NombreArtTextBox.Text,
                 DescripcionTextBox.Text,
                 (decimal)PrecioNumericUpDown.Value
                 );
@@ -83,7 +81,6 @@ namespace Cotizaciones_Edwin_Marte.Registros
                 else
                 {
                     Art.ArticulosId = (int)ArticulosIdNumericUpDown.Value;
-                    Art.Nombre = NombreArtTextBox.Text;
                     Art.Descripcion = DescripcionTextBox.Text;
                     Art.Precio = PrecioNumericUpDown.Value;
 
@@ -110,7 +107,6 @@ namespace Cotizaciones_Edwin_Marte.Registros
             if (Art != null)
             {
                 ArticulosIdNumericUpDown.Value = Art.ArticulosId;
-                NombreArtTextBox.Text = Art.Nombre;
                 DescripcionTextBox.Text = Art.Descripcion;
                 PrecioNumericUpDown.Value = Art.Precio;
             }
@@ -124,10 +120,10 @@ namespace Cotizaciones_Edwin_Marte.Registros
             ca.Show();
         }
 
-        private void CotizacionesDetalleButton_Click(object sender, EventArgs e)
+        private void RegistroCotButton_Click(object sender, EventArgs e)
         {
-            CotizacionesDetalle cd = new CotizacionesDetalle();
-            cd.Show();
+            CotizacionesDetalle Rc = new CotizacionesDetalle();
+            Rc.Show();
         }
     }
 }

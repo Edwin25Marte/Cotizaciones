@@ -10,9 +10,8 @@ namespace Cotizaciones_Edwin_Marte.Entidades
     {
         [Key]
 
-        public int Id { get; set; }
         public int ArtId { get; set; }
-        public string Fecha { get; set; }
+        public string Descripcion { get; set; }
         public decimal Cantidad { get; set; }
         public decimal Precio { get; set; }
         public decimal Importe { get; set; }
@@ -20,19 +19,17 @@ namespace Cotizaciones_Edwin_Marte.Entidades
 
         public CotizacionDetalle()
         {
-            Id = 0;
             ArtId = 0;
-            Fecha = " ";
             Cantidad = 0;
             Precio = 0;
             Importe = 0;
             Total = 0;
+            Descripcion = " ";
         }
-        public CotizacionDetalle(int Id, int ArtId, string Fecha, decimal Cantidad, decimal Precio, decimal Importe)
+        public CotizacionDetalle(int ArtId, string Descripcion, decimal Cantidad, decimal Precio, decimal Importe)
         {
-            this.Id = Id;
             this.ArtId = ArtId;
-            this.Fecha = Fecha;
+            this.Descripcion = Descripcion;
             this.Cantidad = Cantidad;
             this.Precio = Precio;
             this.Importe = Importe;

@@ -38,10 +38,10 @@
             this.NuevoAButton = new System.Windows.Forms.Button();
             this.GuardarAButton = new System.Windows.Forms.Button();
             this.EliminarAButton = new System.Windows.Forms.Button();
-            this.CotizacionesDetalleButton = new System.Windows.Forms.Button();
             this.ConsultarAButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.NombreArtTextBox = new System.Windows.Forms.TextBox();
+            this.CantCotTextBox = new System.Windows.Forms.TextBox();
+            this.RegistroCotButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ArticulosIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 144);
+            this.label3.Location = new System.Drawing.Point(38, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 1;
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 220);
+            this.label2.Location = new System.Drawing.Point(38, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 2;
@@ -75,21 +75,21 @@
             // 
             // ArticulosIdNumericUpDown
             // 
-            this.ArticulosIdNumericUpDown.Location = new System.Drawing.Point(109, 66);
+            this.ArticulosIdNumericUpDown.Location = new System.Drawing.Point(132, 66);
             this.ArticulosIdNumericUpDown.Name = "ArticulosIdNumericUpDown";
             this.ArticulosIdNumericUpDown.Size = new System.Drawing.Size(121, 20);
             this.ArticulosIdNumericUpDown.TabIndex = 3;
             // 
             // PrecioNumericUpDown
             // 
-            this.PrecioNumericUpDown.Location = new System.Drawing.Point(109, 218);
+            this.PrecioNumericUpDown.Location = new System.Drawing.Point(132, 176);
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(202, 20);
             this.PrecioNumericUpDown.TabIndex = 4;
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(109, 144);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(132, 102);
             this.DescripcionTextBox.Multiline = true;
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(202, 63);
@@ -97,7 +97,7 @@
             // 
             // BuscarAButton
             // 
-            this.BuscarAButton.Location = new System.Drawing.Point(236, 63);
+            this.BuscarAButton.Location = new System.Drawing.Point(259, 63);
             this.BuscarAButton.Name = "BuscarAButton";
             this.BuscarAButton.Size = new System.Drawing.Size(75, 23);
             this.BuscarAButton.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             // NuevoAButton
             // 
-            this.NuevoAButton.Location = new System.Drawing.Point(58, 250);
+            this.NuevoAButton.Location = new System.Drawing.Point(57, 261);
             this.NuevoAButton.Name = "NuevoAButton";
             this.NuevoAButton.Size = new System.Drawing.Size(75, 23);
             this.NuevoAButton.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             // GuardarAButton
             // 
-            this.GuardarAButton.Location = new System.Drawing.Point(144, 250);
+            this.GuardarAButton.Location = new System.Drawing.Point(143, 261);
             this.GuardarAButton.Name = "GuardarAButton";
             this.GuardarAButton.Size = new System.Drawing.Size(75, 23);
             this.GuardarAButton.TabIndex = 8;
@@ -127,7 +127,7 @@
             // 
             // EliminarAButton
             // 
-            this.EliminarAButton.Location = new System.Drawing.Point(234, 250);
+            this.EliminarAButton.Location = new System.Drawing.Point(233, 261);
             this.EliminarAButton.Name = "EliminarAButton";
             this.EliminarAButton.Size = new System.Drawing.Size(75, 23);
             this.EliminarAButton.TabIndex = 9;
@@ -135,19 +135,9 @@
             this.EliminarAButton.UseVisualStyleBackColor = true;
             this.EliminarAButton.Click += new System.EventHandler(this.EliminarAButton_Click);
             // 
-            // CotizacionesDetalleButton
-            // 
-            this.CotizacionesDetalleButton.Location = new System.Drawing.Point(43, 23);
-            this.CotizacionesDetalleButton.Name = "CotizacionesDetalleButton";
-            this.CotizacionesDetalleButton.Size = new System.Drawing.Size(123, 23);
-            this.CotizacionesDetalleButton.TabIndex = 10;
-            this.CotizacionesDetalleButton.Text = "Cotizaciones detalle";
-            this.CotizacionesDetalleButton.UseVisualStyleBackColor = true;
-            this.CotizacionesDetalleButton.Click += new System.EventHandler(this.CotizacionesDetalleButton_Click);
-            // 
             // ConsultarAButton
             // 
-            this.ConsultarAButton.Location = new System.Drawing.Point(236, 23);
+            this.ConsultarAButton.Location = new System.Drawing.Point(259, 23);
             this.ConsultarAButton.Name = "ConsultarAButton";
             this.ConsultarAButton.Size = new System.Drawing.Size(75, 23);
             this.ConsultarAButton.TabIndex = 11;
@@ -158,28 +148,38 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 109);
+            this.label4.Location = new System.Drawing.Point(40, 215);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Nombre";
+            this.label4.Text = "Cantidad cotizada";
             // 
-            // NombreArtTextBox
+            // CantCotTextBox
             // 
-            this.NombreArtTextBox.Location = new System.Drawing.Point(109, 109);
-            this.NombreArtTextBox.Name = "NombreArtTextBox";
-            this.NombreArtTextBox.Size = new System.Drawing.Size(200, 20);
-            this.NombreArtTextBox.TabIndex = 13;
+            this.CantCotTextBox.Location = new System.Drawing.Point(132, 212);
+            this.CantCotTextBox.Name = "CantCotTextBox";
+            this.CantCotTextBox.Size = new System.Drawing.Size(202, 20);
+            this.CantCotTextBox.TabIndex = 13;
+            // 
+            // RegistroCotButton
+            // 
+            this.RegistroCotButton.Location = new System.Drawing.Point(43, 23);
+            this.RegistroCotButton.Name = "RegistroCotButton";
+            this.RegistroCotButton.Size = new System.Drawing.Size(156, 23);
+            this.RegistroCotButton.TabIndex = 14;
+            this.RegistroCotButton.Text = "Registro de cotizaciones";
+            this.RegistroCotButton.UseVisualStyleBackColor = true;
+            this.RegistroCotButton.Click += new System.EventHandler(this.RegistroCotButton_Click);
             // 
             // RegArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 296);
-            this.Controls.Add(this.NombreArtTextBox);
+            this.ClientSize = new System.Drawing.Size(346, 307);
+            this.Controls.Add(this.RegistroCotButton);
+            this.Controls.Add(this.CantCotTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ConsultarAButton);
-            this.Controls.Add(this.CotizacionesDetalleButton);
             this.Controls.Add(this.EliminarAButton);
             this.Controls.Add(this.GuardarAButton);
             this.Controls.Add(this.NuevoAButton);
@@ -212,9 +212,9 @@
         private System.Windows.Forms.Button NuevoAButton;
         private System.Windows.Forms.Button GuardarAButton;
         private System.Windows.Forms.Button EliminarAButton;
-        private System.Windows.Forms.Button CotizacionesDetalleButton;
         private System.Windows.Forms.Button ConsultarAButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox NombreArtTextBox;
+        private System.Windows.Forms.TextBox CantCotTextBox;
+        private System.Windows.Forms.Button RegistroCotButton;
     }
 }
